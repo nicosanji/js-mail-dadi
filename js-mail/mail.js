@@ -1,19 +1,27 @@
-// MAIL.JS 
+// ESERCIZIO MAIL
 
-// dichiaro le const presenti nel sistema
+// Array = lista email nel sistema
+const listaMail = ["mario.rossi@gmail.com", "giuseppe.verdi@gmail,com", "valeria.bianchi@gmail.com"];
 
-const mail1 = "p.maldini@gmail.com";
-const mail2 = "f.totti@gmail.com";
-const mail3 = "a.delpiero@gmail.com";
+// Variabile dichiarata false (valore booleano)
+let mailEsiste = false;
 
-//ARRAY(archivio) delle mail presenti nel sistema
-//       indice  =   0      1     2    
-const listaMail = [mail1, mail2, mail3];
+// Chiedi all’utente la sua email
+const mailUtente = prompt("Inserisci la tua e-mail");
 
-console.log(listaMail); 
+// Ciclo delle mail, controlla tutte le mail 
 
-// dichiaro la const mailUtente facendola inserire all'utente
+for (let i = 0; i < listaMail.length; i++) {
+    const emailCorrente = listaMail[i];
+    if (emailCorrente === mailUtente) {
+        mailEsiste = true;
+    }
+}
 
-let mailUtente = prompt("Inserisci la tua e-mail");
+// Messaggio sull'esito del controllo (alert)
 
-// 
+if (mailEsiste) {
+    alert("Mail trovata. Utente già registrato !");
+} else {
+    alert("Mail non trovata. Registrati !");
+}
